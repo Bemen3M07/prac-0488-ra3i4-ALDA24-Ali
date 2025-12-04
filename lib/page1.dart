@@ -4,6 +4,8 @@ import 'shampoo.dart';
 import 'shampoo_provider.dart';
 import 'page2.dart';
 
+//LA PAGINA PRINCIPAL DONDE SE SELECCIONA EL SHAMPOO. PAGE1.
+
 // StatefulWidget necesario para mantener la selección en la UI
 class Page1 extends StatefulWidget {
   const Page1({super.key});
@@ -26,21 +28,21 @@ class _Page1State extends State<Page1> {
     return Scaffold(
       appBar: AppBar(title: const Text("Shampoo App")),
 
-      // CENTRADO PERFECTO PARA EXAMEN
+      // CENTRADO PERFECTO
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
-            mainAxisSize: MainAxisSize.min, // evita ocupar toda la pantalla
+            mainAxisSize: MainAxisSize.min, // evitamos ocupar toda la pantalla
             children: [
 
               // Selector de shampoo
               DropdownMenu<Shampoo>(
-                initialSelection: seleccionat, // mantiene selección
+                initialSelection: seleccionat, // mantiene la selección
                 hintText: "Selecciona un shampoo",
                 dropdownMenuEntries: shampus
                     .map(
-                      (s) => DropdownMenuEntry<Shampoo>(
+                      (s) => DropdownMenuEntry<Shampoo>(//el dropdownmenuentry es cada opcion del menu desplegable.
                         value: s,
                         label: s.marca,
                       ),
@@ -52,7 +54,7 @@ class _Page1State extends State<Page1> {
                     seleccionat = value;
                   });
 
-                  if (value != null) prov.seleccionar(value);
+                  if (value != null) prov.seleccionar(value);//esto es para seleccionar el shampoo en el provider
                 },
               ),
 
