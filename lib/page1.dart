@@ -28,7 +28,7 @@ class _Page1State extends State<Page1> {
     return Scaffold(
       appBar: AppBar(title: const Text("Shampoo App")),
 
-      // CENTRADO PERFECTO
+      // CENTRAMOS EL CONTENIDO
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16),
@@ -49,7 +49,7 @@ class _Page1State extends State<Page1> {
                     )
                     .toList(),
 
-                onSelected: (value) {
+                onSelected: (value) {//cuando se selecciona un shampoo
                   setState(() {
                     seleccionat = value;
                   });
