@@ -18,6 +18,7 @@ class _Page1State extends State<Page1> {
   Widget build(BuildContext context) {
     final prov = Provider.of<ShampooProvider>(context, listen: false);
 
+
     return Scaffold(
       appBar: AppBar(title: const Text("Shampoo App")),
       body: Padding(
