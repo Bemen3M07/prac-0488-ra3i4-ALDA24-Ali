@@ -18,7 +18,7 @@ class Page2 extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Marca: ${prov.seleccionat?.marca ?? ''}"),
-            Text("Quantitat envas: ${prov.quantitatInicial} ml"),
+            Text("Quantitat de lenvas: ${prov.quantitatInicial} ml"),
             Text(
               "Queda: ${prov.quantitatQueda} ml",
               style: TextStyle(

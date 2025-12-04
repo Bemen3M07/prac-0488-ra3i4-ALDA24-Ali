@@ -4,6 +4,7 @@ import 'shampoo.dart';
 import 'shampoo_provider.dart';
 import 'page2.dart';
 
+//aqui es necesario un StatefulWidget para mantener la selección
 class Page1 extends StatefulWidget {
   const Page1({super.key});
 
@@ -11,21 +12,27 @@ class Page1 extends StatefulWidget {
   State<Page1> createState() => _Page1State();
 }
 
+//aqui se hace el mantenimiento de la selección
 class _Page1State extends State<Page1> {
   Shampoo? seleccionat;
 
   @override
   Widget build(BuildContext context) {
-    final prov = Provider.of<ShampooProvider>(context, listen: false);
+    final prov = Provider.of<ShampooProvider>(context);//se obtiene el provider
 
+    // Mantenemos la selección al volver desde Page2
+    seleccionat = prov.seleccionat;
 
     return Scaffold(
       appBar: AppBar(title: const Text("Shampoo App")),
-      body: Padding(
+     body: Center(
+      child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             DropdownMenu<Shampoo>(
+              initialSelection: seleccionat,
               hintText: "Selecciona un shampoo",
               dropdownMenuEntries: shampus
                   .map(
@@ -58,6 +65,7 @@ class _Page1State extends State<Page1> {
             ),
           ],
         ),
+      ),
       ),
     );
   }
