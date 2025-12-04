@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'shampoo_provider.dart';
 
+//ESTA ES LA PAGINA DONDE SE MUESTRAN LOS DETALLES DEL SHAMPOO SELECCIONADO. PAGE2.
 class Page2 extends StatelessWidget {
   const Page2({super.key});
 
@@ -10,10 +11,10 @@ class Page2 extends StatelessWidget {
     final prov = Provider.of<ShampooProvider>(context);
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Detalls del Shampoo")),
+      appBar: AppBar(title: const Text("Detalls del Shampoo")),//titulo de la pagina
 
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),//padding alrededor del contenido
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -30,7 +31,7 @@ class Page2 extends StatelessWidget {
             const SizedBox(height: 20),
 
             ElevatedButton(
-              onPressed: () {
+              onPressed: () {//boton para restar dosis
                 prov.restarDosi();
               },
               child: const Text("Restar dosi (12 ml)"),
